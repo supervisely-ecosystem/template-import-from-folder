@@ -8,9 +8,9 @@ load_dotenv("local.env")
 load_dotenv(os.path.expanduser("~/supervisely.env"))
 
 
-def main():
-    print("123")
+class MyImport(sly.app.Import):
+    pass
 
 
-if __name__ == "__main__":
-    main()
+app = MyImport()
+app.run()
