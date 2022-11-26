@@ -15,6 +15,8 @@
 
 Explain here what your app does.
 
+https://github.com/supervisely-ecosystem/demo-data-for-import-template
+
 # How to use
 
 Step by step guide with examples and demos
