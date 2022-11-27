@@ -21,10 +21,9 @@ class MyImport(sly.app.Import):
         dataset = api.dataset.create(project.id, "dataset", change_name_if_conflict=True)
         print(f"Created dataset: id={dataset.id}, name={dataset.name}")
 
-        # read input file, remove empty lines and leading / trailing whitespaces
+        # read input file, remove empty lines + leading & trailing whitespaces
         with open(path) as file:
-            lines = file.readlines()
-        lines = [line.strip() for line in file.readlines() if line.strip()]
+            lines = [line.strip() for line in file.readlines() if line.strip()]
 
         # process text file and remove empty lines
         progress = sly.Progress("Processing urls", total_cnt=len(lines))
