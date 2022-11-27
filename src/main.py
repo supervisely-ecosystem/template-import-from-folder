@@ -21,36 +21,34 @@ class MyImport(sly.app.Import):
         dataset = api.dataset.create(project.id, "dataset", change_name_if_conflict=True)
         print(f"Created dataset: id={dataset.id}, name={dataset.name}")
 
+        # read input file, remove empty lines and leading / trailing whitespaces
         with open(path) as file:
-            # process text file and remove empty lines
-            lines = []
-            for line in file:
-                normalized_line = line.strip()
-                if normalized_line != "":
-                    lines.append(normalized_line)
+            lines = file.readlines()
+        lines = [line.strip() for line in file.readlines() if line.strip()]
 
-            progress = sly.Progress("Processing urls", total_cnt=len(lines))
-            for index, img_url in enumerate(lines):
-                try:
-                    img_ext = Path(img_url).suffix
-                    img_name = f"{index:03d}{img_ext}"
-                    img_path = os.path.join(os.getcwd(), "data", img_name)
+        # process text file and remove empty lines
+        progress = sly.Progress("Processing urls", total_cnt=len(lines))
+        for index, img_url in enumerate(lines):
+            try:
+                img_ext = Path(img_url).suffix
+                img_name = f"{index:03d}{img_ext}"
+                img_path = os.path.join(os.getcwd(), "data", img_name)
 
-                    # download image
-                    response = requests.get(img_url)
-                    with open(img_path, "wb") as file:
-                        file.write(response.content)
+                # download image
+                response = requests.get(img_url)
+                with open(img_path, "wb") as file:
+                    file.write(response.content)
 
-                    # upload image into dataset on Supervisely server
-                    info = api.image.upload_path(dataset.id, img_name, img_path)
-                    sly.logger.trace(f"Image has been uploaded: id={info.id}, name={info.name}")
+                # upload image into dataset on Supervisely server
+                info = api.image.upload_path(dataset.id, img_name, img_path)
+                sly.logger.trace(f"Image has been uploaded: id={info.id}, name={info.name}")
 
-                    # remove local file after upload
-                    os.remove(img_path)
-                except Exception as e:
-                    sly.logger.warn(f"Skip image", extra={"url": img_url, "reason": repr(e)})
-                finally:
-                    progress.iter_done_report()
+                # remove local file after upload
+                os.remove(img_path)
+            except Exception as e:
+                sly.logger.warn(f"Skip image", extra={"url": img_url, "reason": repr(e)})
+            finally:
+                progress.iter_done_report()
 
         return project.id
 
