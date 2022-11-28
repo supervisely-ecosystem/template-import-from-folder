@@ -21,8 +21,9 @@
             "justMyCode": true,
             "env": {
                 "PYTHONPATH": "${workspaceFolder}:${PYTHONPATH}",
-                // "ENV": "production",
-                // "SLY_APP_DATA_DIR": "${workspaceFolder}/results",
+                "ENV": "production",
+                "SLY_APP_DATA_DIR": "${workspaceFolder}/results",
+                "FILE": "/temp/my_project.txt"
             }
         },
     ]
