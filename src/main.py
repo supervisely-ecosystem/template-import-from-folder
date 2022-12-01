@@ -45,7 +45,7 @@ class MyImport(sly.app.Import):
                 # remove local file after upload
                 os.remove(img_path)
             except Exception as e:
-                sly.logger.warn(f"Skip image", extra={"url": img_url, "reason": repr(e)})
+                sly.logger.warn("Skip image", extra={"url": img_url, "reason": repr(e)})
             finally:
                 progress.iter_done_report()
 
