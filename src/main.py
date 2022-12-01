@@ -10,16 +10,9 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 
 
 class MyImport(sly.app.Import):
-    def process(self, workspace_id: int, path: str, is_directory: bool):
+    def process(self, workspace_id: int, project_id: int, dataset_id: int, path: str, is_directory: bool):
         # create api object to communicate with Supervisely Server
         api = sly.Api.from_env()
-
-        # create project with the same name as input file and empty dataset in it
-        project_name = Path(path).stem
-        project = api.project.get_or_create(workspace_id, project_name)
-        print(f"Working project: id={project.id}, name={project.name}")
-        dataset = api.dataset.create(project.id, "dataset", change_name_if_conflict=True)
-        print(f"Created dataset: id={dataset.id}, name={dataset.name}")
 
         # read input file, remove empty lines + leading & trailing whitespaces
         with open(path) as file:
@@ -39,7 +32,7 @@ class MyImport(sly.app.Import):
                     file.write(response.content)
 
                 # upload image into dataset on Supervisely server
-                info = api.image.upload_path(dataset.id, img_name, img_path)
+                info = api.image.upload_path(dataset_id, img_name, img_path)
                 sly.logger.trace(f"Image has been uploaded: id={info.id}, name={info.name}")
 
                 # remove local file after upload
@@ -49,7 +42,7 @@ class MyImport(sly.app.Import):
             finally:
                 progress.iter_done_report()
 
-        return project.id
+        return project_id
 
 
 app = MyImport()
