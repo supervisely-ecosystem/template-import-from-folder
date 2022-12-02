@@ -1,8 +1,7 @@
 import os
-from pathlib import Path
 from dotenv import load_dotenv
-import requests
 import supervisely as sly
+import magic
 
 # load ENV variables for debug, has no effect in production
 load_dotenv("local.env")
@@ -14,31 +13,32 @@ class MyImport(sly.app.Import):
         # create api object to communicate with Supervisely Server
         api = sly.Api.from_env()
 
-        # read input file, remove empty lines + leading & trailing whitespaces
-        with open(context.path) as file:
-            lines = [line.strip() for line in file.readlines() if line.strip()]
+        # list all image files in directory
+        mime = magic.Magic(mime=True)
+        
+        images_names = []
+        images_paths = []
+        for file in os.listdir(context.path):
+            file_path = os.path.join(context.path, file)
+            mime_type = mime.from_file(file_path)
+            if mime_type.startswith("image"):
+                images_names.append(file)
+                images_paths.append(file_path)
+            else:
+                # remove file if it's not an image
+                os.remove(file_path)        
 
         # process text file and remove empty lines
-        progress = sly.Progress("Processing urls", total_cnt=len(lines))
-        for index, img_url in enumerate(lines):
+        progress = sly.Progress("Processing images", total_cnt=len(images_names))
+        for img_name, img_path in zip(images_names, images_paths):
             try:
-                img_ext = Path(img_url).suffix
-                img_name = f"{index:03d}{img_ext}"
-                img_path = os.path.join(os.getcwd(), "data", img_name)
-
-                # download image
-                response = requests.get(img_url)
-                with open(img_path, "wb") as file:
-                    file.write(response.content)
-
-                # upload image into dataset on Supervisely server
-                info = api.image.upload_path(context.dataset_id, img_name, img_path)
-                sly.logger.trace(f"Image has been uploaded: id={info.id}, name={info.name}")
+                # upload image by path
+                api.image.upload_path(dataset_id=context.dataset_id, name=img_name, path=img_path)
 
                 # remove local file after upload
                 os.remove(img_path)
             except Exception as e:
-                sly.logger.warn("Skip image", extra={"url": img_url, "reason": repr(e)})
+                sly.logger.warn("Skip image", extra={"name": img_name, "reason": repr(e)})
             finally:
                 progress.iter_done_report()
 
