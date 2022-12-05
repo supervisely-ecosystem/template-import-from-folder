@@ -7,7 +7,7 @@
 <p align="center">
   <a href="#Overview">Overview</a> •
   <a href="#How-to-Develop">How to Develop</a> •
-  <a href="#How-to-Add-App-to-Ecosystem-[Enterprise-Edition-only]">How To Add App to Ecosystem</a> •
+  <a href="#how-to-add-app-to-ecosystem-enterprise-edition-only">How To Add App to Ecosystem</a> •
   <a href="#How-to-Run">How to Run</a>
 </p>
 
