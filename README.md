@@ -6,9 +6,9 @@
 
 <p align="center">
   <a href="#Overview">Overview</a> •
-  <a href="#How-to-Run">How to Run</a> •
-  <a href="#Input-Data-Structure">Input Data Structure</a> •
-  <a href="#Demo">Demo</a>
+  <a href="#How-to-Develop">How to Develop</a> •
+  <a href="#How-to-Add-App-to-Ecosystem-[Enterprise-Edition-only]">How To Add App to Ecosystem</a> •
+  <a href="#How-to-Run">How to Run</a>
 </p>
 
 [![](https://img.shields.io/badge/supervisely-ecosystem-brightgreen)](https://ecosystem.supervise.ly/apps/supervisely-ecosystem/template-import-from-folder)
@@ -142,7 +142,7 @@ app = MyImport()
 app.run()
 ```
 
-# How To Import App to Ecosystem [Enterprise Edition only]
+# How To Add App to Ecosystem [Enterprise Edition only]
 
 **Step 1.** Go to Ecosystem page and click on `private apps`
 
