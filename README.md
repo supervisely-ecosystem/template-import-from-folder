@@ -1,6 +1,6 @@
 <div align="center" markdown>
 
-<img src="/>
+<img src=""/>
 
 # Import from Folder
 
@@ -66,7 +66,7 @@ SLY_APP_DATA_DIR="results/" # ⬅️ change it
 
 Template import from folder app comes with a sample images in `data` directory.
 
-```text
+```bash
 .
 └── data
     ├── cat_1.jpg
@@ -101,13 +101,16 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 
 #### Create an Import class inherited from sly.app.Import
 
+Class `sly.app.Import` will handle downloading of the directory to the location specified in `local.env`.
+You just need to write a script to import your data to Supervisely instance.
+
 ```python
 class MyImport(sly.app.Import):
     def process(self, context: sly.app.Import.Context):
         # create api object to communicate with Supervisely Server
         api = sly.Api.from_env()
 
-        # list images in directory
+        # list images in the downloaded directory
         images_names = []
         images_paths = []
         for file in os.listdir(context.path):
