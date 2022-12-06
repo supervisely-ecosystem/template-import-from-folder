@@ -54,6 +54,12 @@ FOLDER="data/"              # ⬅️ change it
 SLY_APP_DATA_DIR="results/" # ⬅️ change it
 ```
 
+By default `CONTEXT_PROJECTID` and `CONTEXT_DATASETID` are not specified (commented) in `local.env` file. It implies that a new project with a new dataset will be created with your data being imported into it.
+
+If you specify `CONTEXT_PROJECTID`, items will be uploaded to existing project, but a new dataset will be created.
+
+If you want to import items to the existing dataset, you should specify both `CONTEXT_PROJECTID` (project id where the dataset is located) and `CONTEXT_DATASETID`.
+
 ## How to debug this template
 
 ### Debug options
@@ -103,6 +109,10 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 
 Class `sly.app.Import` will handle downloading of the directory to the location specified in `local.env`.
 You just need to write a script to import your data to Supervisely instance.
+
+The following example will upload images from `data` directory if you use [**Option 1**](#debug-options) or images from `data` directory in team files folder if you use [**Option 2**](#debug-options). You can specify folder that you want to import in `local.env` file.
+
+**Please be aware that the sample script used in this template only functions for images.**
 
 ```python
 class MyImport(sly.app.Import):
