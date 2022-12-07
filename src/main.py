@@ -24,8 +24,11 @@ class MyImport(sly.app.Import):
         progress = sly.Progress("Processing images", total_cnt=len(images_names))
         for img_name, img_path in zip(images_names, images_paths):
             try:
-                # upload image by path
-                api.image.upload_path(dataset_id=context.dataset_id, name=img_name, path=img_path)
+                # upload image into dataset on Supervisely server
+                info = api.image.upload_path(dataset_id=context.dataset_id, name=img_name, path=img_path)
+                sly.logger.trace(
+                    f"Image has been uploaded: id={info.id}, name={info.name}"
+                )
 
                 # remove local file after upload
                 if sly.utils.is_production():
