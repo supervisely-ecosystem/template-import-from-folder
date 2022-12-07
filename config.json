@@ -1,6 +1,6 @@
 {
-  "name": "Import from Folder",
-  "description": "Demonstrates how to make your own import supervisely app",
+  "name": "Custom Import from Folder",
+  "description": "Demonstrates how to make custom import supervisely app, that imports data from given folder",
   "categories": ["development"],
   "main_script": "src/main.py",
   "headless": true,
