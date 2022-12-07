@@ -1,6 +1,6 @@
 <div align="center" markdown>
 
-<img src="https://user-images.githubusercontent.com/48913536/206163130-bc5c9930-d69c-41ca-b9e2-5924722af6bb.png"/>
+<img src="https://user-images.githubusercontent.com/48913536/206165736-f69b6b92-dd82-45d7-84d7-9812f2e84e63.png"/>
 
 # Import from Folder
 
@@ -21,7 +21,7 @@
 
 Describe the type of data your app is importing e.g: images, videos, COCO, PascalVoc or any other data format.
 
-Describe a folder structure using examples.
+Describe an input folder structure using examples.
 
 **Example:**
 
