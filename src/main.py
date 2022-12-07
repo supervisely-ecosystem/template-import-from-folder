@@ -28,7 +28,8 @@ class MyImport(sly.app.Import):
                 api.image.upload_path(dataset_id=context.dataset_id, name=img_name, path=img_path)
 
                 # remove local file after upload
-                os.remove(img_path)
+                if sly.utils.is_production():
+                    os.remove(img_path)
             except Exception as e:
                 sly.logger.warn("Skip image", extra={"name": img_name, "reason": repr(e)})
             finally:
