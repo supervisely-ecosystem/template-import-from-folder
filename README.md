@@ -19,6 +19,9 @@
 
 # Overview
 
+This template is designed as a starting point for developers to create custom import apps for Supervisely platform.
+Template app in it's current state will upload image files in the given directory to selected project or dataset.
+
 Describe the type of data your app is importing e.g: images, videos, COCO, PascalVoc or any other data format.
 
 Describe an input folder structure using examples.
