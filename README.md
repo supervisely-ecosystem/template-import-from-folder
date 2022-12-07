@@ -39,17 +39,7 @@ Insert a link to demo data for users.
 
 # How to Run
 
-App can be launched from ecosystem or folder in team files.
-
-<details>
-<summary open>Run from team files</summary>
-<br>
-
-Run the application from the context menu of the folder (right mouse button) on Team Files page
-  
-<img src=""/>
-
-</details>
+App can be launched from ecosystem, project, dataset, or folder in team files.
 
 <details>
 <summary>Run from ecosystem</summary>
@@ -63,6 +53,26 @@ Click `Run application` button on the right side of the app page. Modal window w
 <img src=""/>
 
 2. If you want to import project from Team Files, choose `Team Files` option and choose folder to import in the modal window.
+  
+<img src=""/>
+
+</details>
+
+<details>
+<summary open>Run from Project or Dataset</summary>
+<br>
+
+Run the application from the context menu of the folder (right mouse button) on Team Files page
+  
+<img src=""/>
+
+</details>
+
+<details>
+<summary open>Run from team files</summary>
+<br>
+
+Run the application from the context menu of the folder (right mouse button) on Team Files page
   
 <img src=""/>
 
