@@ -44,11 +44,13 @@ App can be launched from ecosystem, project, dataset, or folder in team files.
 <details>
 <summary>Run from ecosystem</summary>
 <br>
+
 Click `Run application` button on the right side of the app page. Modal window will be opened.
 
 <div align="center">
   <img src="https://user-images.githubusercontent.com/48913536/206445665-625df23b-fa16-4c75-a8db-d62e8dae9941.png">
 </div>
+
 Choose folder to import in the modal window.
 
 <div align="center">
