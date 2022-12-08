@@ -45,16 +45,15 @@ App can be launched from ecosystem, project, dataset, or folder in team files.
 <summary>Run from ecosystem</summary>
 <br>
 Click `Run application` button on the right side of the app page. Modal window will be opened.
-  
-<img src="">
 
-1. If you want to upload project folder from your computer, choose `Drag & Drop` option. You can upload the project folder to drag-and-drop field or you can click on the drag-and-drop field and choose project from your computer in opened window.
-  
-<img src=""/>
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/48913536/206445665-625df23b-fa16-4c75-a8db-d62e8dae9941.png">
+</div>
+Choose folder to import in the modal window.
 
-2. If you want to import project from Team Files, choose `Team Files` option and choose folder to import in the modal window.
-  
-<img src=""/>
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/48913536/206445670-d13ad1d2-e6a4-47a0-a729-eb898c28d650.png"/>
+</div>
 
 </details>
 
@@ -62,9 +61,17 @@ Click `Run application` button on the right side of the app page. Modal window w
 <summary open>Run from Project or Dataset</summary>
 <br>
 
-Run the application from the context menu of the folder (right mouse button) on Team Files page
-  
-<img src=""/>
+If you want to upload your data to existing Project or Dataset run the application from the context menu of the Project or Dataset.
+
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/48913536/206445663-b04f2268-8da1-4f0d-b41a-f2d976431a47.png"/>
+</div>
+
+You can upload the folder to drag-and-drop field or you can click on the drag-and-drop field and choose project from your computer in opened window.
+
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/48913536/206445657-374aaa66-e568-4373-bf71-69a6f4f442a0.png"/>
+</div>
 
 </details>
 
@@ -73,7 +80,9 @@ Run the application from the context menu of the folder (right mouse button) on 
 <br>
 
 Run the application from the context menu of the folder (right mouse button) on Team Files page
-  
-<img src=""/>
+
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/48913536/206445676-f5431916-c9d7-4aae-b75a-1a9e64c35767.png"/>
+</div>
 
 </details>
