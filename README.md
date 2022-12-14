@@ -1,6 +1,6 @@
 <div align="center" markdown>
 
-<img src="https://user-images.githubusercontent.com/48913536/206165736-f69b6b92-dd82-45d7-84d7-9812f2e84e63.png"/>
+<img src="https://user-images.githubusercontent.com/48913536/207625766-e6f4314a-3b05-427f-9777-539e772c33fa.png"/>
 
 # Import from Folder
 

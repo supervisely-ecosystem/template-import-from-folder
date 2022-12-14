@@ -6,7 +6,7 @@
   "modal_template": "src/modal.html",
   "headless": true,
   "icon": "https://user-images.githubusercontent.com/48913536/206150954-aea5867a-812b-4e89-8c1b-b2bed3c585f2.png",
-  "poster": "https://user-images.githubusercontent.com/48913536/206165736-f69b6b92-dd82-45d7-84d7-9812f2e84e63.png",
+  "poster": "https://user-images.githubusercontent.com/48913536/207625766-e6f4314a-3b05-427f-9777-539e772c33fa.png",
   "context_menu": {
     "context_category": "Import",
     "target": ["files_folder", "images_project", "images_dataset"]
