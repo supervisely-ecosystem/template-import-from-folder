@@ -54,7 +54,7 @@ Click `Run application` button on the right side of the app page. Modal window w
 Choose folder to import in the modal window.
 
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/48913536/206445670-d13ad1d2-e6a4-47a0-a729-eb898c28d650.png"/>
+  <img src="https://user-images.githubusercontent.com/48913536/206445670-d13ad1d2-e6a4-47a0-a729-eb898c28d650.png" width=60%/>
 </div>
 
 </details>
@@ -69,10 +69,10 @@ If you want to upload your data to existing Project or Dataset run the applicati
   <img src="https://user-images.githubusercontent.com/48913536/206445663-b04f2268-8da1-4f0d-b41a-f2d976431a47.png"/>
 </div>
 
-You can upload the folder to drag-and-drop field or you can click on the drag-and-drop field and choose project from your computer in opened window.
+You can upload the folder to drag-and-drop field or you can click on the drag-and-drop field and choose folder from your computer in opened window.
 
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/48913536/206445657-374aaa66-e568-4373-bf71-69a6f4f442a0.png"/>
+  <img src="https://user-images.githubusercontent.com/48913536/206445657-374aaa66-e568-4373-bf71-69a6f4f442a0.png" width=60%/>
 </div>
 
 </details>
